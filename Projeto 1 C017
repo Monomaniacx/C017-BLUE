@@ -1,0 +1,97 @@
+var prompt = require("prompt-sync")();
+
+let r1 = 0;
+let r2 = 'nao';
+
+    console.log('O guerreiro Aiden chegou em casa após um longo dia de aventuras e descobriu que sua princesa havia sido sequestrada por um monstro e decidiu arrumar sua armadura e ir atras de sua amada\n\n ');
+
+    console.log("1 - Aiden lembrou de pegar sua espada?\n");
+    r2 = prompt('Responta com "sim" ou "nao": ');
+    console.clear();
+
+    do{      
+        if(r2 !== 'nao' && r2 !== 'sim') {
+    r2 = prompt('Responta com "sim" ou "nao": ');
+            console.clear();    
+        }
+    }while(r2 !== 'nao' && r2 !== 'sim');
+
+    if(r2 === 'sim') {
+        r1++
+    }
+
+    console.log('2 - Aiden achou uma bola de fogo no báu?\n');
+    r2 = prompt('Responta com "sim" ou "nao": ');
+    console.clear();
+
+    do{      
+        if(r2 !== 'nao' && r2 !== 'sim') {
+    r2 = prompt('Responta com "sim" ou "nao": ');
+            console.clear();    
+        }
+    }while(r2 !== 'nao' && r2 !== 'sim');
+
+    if(r2 === 'sim') {
+        r1++
+    }
+
+    console.log('3 - Aiden achou seu cavalo Yoshi?\n');
+    r2 = prompt('Responta com "sim" ou "nao": ');
+    console.clear();
+
+    do{      
+        if(r2 !== 'nao' && r2 !== 'sim') {
+    r2 = prompt('Responta com "sim" ou "nao": ');
+            console.clear();    
+        }
+    }while(r2 !== 'nao' && r2 !== 'sim');
+
+    if(r2 === 'sim') {
+        r1++
+    }
+
+    console.log('4 - Aiden tinha uma estrela da invencibilidade para passar sobre um exercito a sua frente?\n')
+    r2 = prompt('Responta com "sim" ou "nao": ');
+    console.clear(); 
+
+    do{      
+        if(r2 !== 'nao' && r2 !== 'sim') {
+    r2 = prompt('Responta com "sim" ou "nao": ');
+            console.clear();     
+        }
+    }while(r2 !== 'nao' && r2 !== 'sim');
+
+    if(r2 === 'sim'){
+        r1++
+    }
+
+    console.log('5 - Aiden conseguiu passar por todo castelo do monstro?\n')
+    r2 = prompt('Responta com "sim" ou "nao": ');
+    console.clear(); 
+
+    do{      
+        if(r2 !== 'nao' && r2 !== 'sim') {
+    r2 = prompt('Responta com "sim" ou "nao": ');
+            console.clear();     
+        }
+    }while(r2 !== 'nao' && r2 !== 'sim');
+
+    if(r2 === 'sim') {
+        r1++
+    }
+
+    console.clear(); 
+
+    if(r1 == 5) {
+        console.log('Aiden derrota o monstro e recupera sua amada princesa\n\n');
+    }else if(r1 == 4) {
+        console.log('Aiden derrota o monstro mas descobre que sua princesa esta em outro castelo\n\n');
+    }else if(r1 == 3) {
+        console.log('Aiden chegou no castelo do monstro mas esqueceu de levar uma corda para escalar o muro.\n\n');
+    }else if(r1 == 2) {
+        console.log('Aiden perdeu seu cavalo e nao chegou ao destino final.\n\n');
+}else if(r1 == 1)
+        console.log('Aiden escolheu morrer do que pegar a vida.\n\n');
+  else if(r1 == 0)
+    console.log('Aiden foi pego pelo exercito inimigo\n\n');
+
