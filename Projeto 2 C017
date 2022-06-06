@@ -1,0 +1,88 @@
+const prompt = require('prompt-sync')();
+console.clear()
+
+const escolhas = ['pedra', 'papel', 'tesoura'];
+
+let nome = prompt('Qual seu nome? ');
+
+while(true){
+    let rodadas = +prompt('Quantas rodadas quer jogar? ');
+    let humano = 0; 
+    let maquina = 0;  
+
+
+  
+    while(true){
+        for(let i = 0; i <= rodadas; i++) {
+            let aleatorio = escolhas[Math.floor(Math.random() * escolhas.length)];
+            let jogo = prompt('Vai jogar com pedra, papel ou tesoura? ');
+            if(jogo == 'pedra' || jogo == 'papel' || jogo == 'tesoura'){
+                if(jogo == 'pedra'){
+                    if(aleatorio == 'pedra'){
+                        console.log('Pedra');
+                        console.log('Escolha da maquina: Pedra');
+                        console.log('Empate.');
+                        console.log(`Pontos: ${humano} x ${maquina}`);
+                    } else if(aleatorio == 'papel'){
+                        maquina++;
+                        console.log('Pedra');
+                        console.log('Escolha da maquina: Papel');
+                        console.log('Poxa não foi dessa vez');
+                        console.log(`Pontos: ${humano} x ${maquina}`);
+                    } else {
+                        humano++;
+                        console.log('Pedra');
+                        console.log('Escolha da maquina: Tesoura');
+                        console.log('Parabens, voce foi melhor que a maquina');
+                        console.log(`Pontos: ${humano} x ${maquina}`);                        
+                    }
+                } else if(jogo == 'papel'){
+                    if(aleatorio == 'papel'){
+                        console.log('Papel');
+                        console.log('Escolha da maquina: Papel');
+                        console.log('Empate.');
+                        console.log(`Pontos: ${humano} x ${maquina}`);
+                    } else if(aleatorio == 'pedra'){
+                        humano++;
+                        console.log('Papel');
+                        console.log('Escolha da maquina: Pedra');
+                        console.log('Parabens, voce foi melhor que a maquina');
+                        console.log(`Pontos ${humano} x ${maquina}`);
+                    } else {
+                        maquina++;
+                        console.log('Papel');
+                        console.log('Escolha da maquina: Tesoura');
+                        console.log('Poxa, não foi dessa vez');
+                        console.log(`Pontos: ${humano} x ${maquina}`);                        
+                    }
+                } else {
+                    if(aleatorio == 'tesoura'){
+                        console.log('Tesoura');
+                        console.log('Escolha da maquina: Tesoura');
+                        console.log('Empate');
+                        console.log(`Pontos: ${humano} x ${maquina}`);
+                    } else if(aleatorio == 'pedra'){
+                        maquina++
+                        console.log('Tesoura');
+                        console.log('Escolha da maquina: Pedra');
+                        console.log('Poxa, não foi dessa vez');
+                        console.log(`Pontos: ${humano} x ${maquina}`);
+                    } else {
+                        humano++;
+                        console.log('Tesoura');
+                        console.log('Escolha da maquina: Papel');
+                        console.log('Parabens, voce foi mais experto que a maquina');
+                        console.log(`Pontos: ${humano} x ${maquina}`);                        
+          
+        }
+        if(humano > maquina){
+            console.log(` ${nome}, você ganhou!`);
+            console.log(`Pontos: ${humano} x ${maquina}`);
+        } else if(humano < maquina){
+            console.log(`${nome}, poxa não foi dessa vez!`);
+            console.log(`Pontos: ${humano} x ${maquina}`);
+        } else {
+            console.log(`${nome}, vocês dois são iguais e empataram`);
+            console.log(`Pontos: ${humano} x ${maquina}`);
+        }
+       
