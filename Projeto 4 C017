@@ -1,5 +1,6 @@
 const prompt = require('prompt-sync')()
-console.clear()
+
+prompt ()
 
 // Declaração de variaveis
 
@@ -11,6 +12,7 @@ let obterstamina = 0
 let poderessheikah = 0
 let batalha = 0
 let zelda = false
+
 
 
 let info = {
@@ -63,13 +65,32 @@ let info = {
 }
 
 
-let comecajogo = [
-  `\n 1 - Obter Stamina`
-  `\n 2 - Conseguir poderes Sheikah`
-  `\n 3 - Repousar perto da fogueira`
-  `\n 4 - Derrotar o Ganon e salvar Hyrule`
-  `\n 5 - Não levantar da cama e ficar com a princesa Zelda`
-]
+//let comecajogo = +prompt(`\n 1 - Obter Stamina\n 2 - Conseguir poderes Sheikah\n 3 - Repousar perto da fogueira\n 4 - Derrotar o Ganon e salvar Hyrule\n 5 - Não levantar da cama e ficar com a princesa Zelda`)
+
+
+// Zelda Breath of the wild (qualquer semelhança com a historia do jogo é de verdade, esse jogo é maravilhoso e usei como referencia. Todos os direitos reservados a Nintendo.)
+  
+console.log(
+    '(Voz do além) Abra seus olhos...  \nAbra seus olhos... \nAcorde... \nVocê é um guerreiro que acorda após um sono de 100 anos e sem lembrar de suas memorias. Você levanta da cama e observa um objeto luminoso em cima da mesa e resolve examinar. \n(Voz do além) Essa é a tabua Sheikah, pegue-a. Ela ajudara a guia-lo após seu longo adormecimento \nVocê pega a tabua Sheikah que é um tablet misterioso com um centro brilhante. Você nunca viu algo parecido porém parece que algo é familiar. \nAo sair da caverna onde ficou adormecido, descobriu que todo reino de Hyrule estava em ruinas e foi tomado novamente pelo Ganon da calamidade. Você tambem encontra um velho ansião que se diz ser o espirito do falecido rei Rhoam e o mesmo pede para você derrotar o Ganon antes que ele tome todo o mundo. Qual seu nome guerreiro?'
+)
+
+  console.log()
+  heroi = prompt('Qual nome quer dar ao guerreiro?')
+
+  //console.clear
+  console.log(
+    `Oh seu nome é ${heroi}, você precisa recuperar suas memorias e recuperar algumas insigneas de sua tabua Sheikah para poder ficar mais forte e derrotar o Ganon da calamidade`
+  )
+   // fim da historia
+
+   let link = +prompt(`\n 1 - Obter Stamina\n 2 - Conseguir poderes Sheikah\n 3 - Repousar perto da fogueira\n 4 - Derrotar o Ganon e salvar Hyrule\n 5 - Não levantar da cama e ficar com a princesa Zelda`)
+
+   //Escolha principal da atividade a ser realizada
+  console.log(
+    `${heroi} Qual ação deseja executar?: `
+  )
+  
+
 
 //Functions
 
@@ -80,7 +101,7 @@ function lutarganon () {
 
    while (xone == 'nenhum') {
     prosseguir()
-    console.clear()
+   // console.clear()
     console.log(`
     ${heroi}, Poder ${info.poder}
     Ganon, poder ${info.vidaGanon}`)
@@ -197,22 +218,8 @@ function obterpoder() {
   prompt(`Pressione ENTER para prosseguir...`)
 }
 
-// Zelda Breath of the wild (qualquer semelhança com a historia do jogo é de verdade, esse jogo é maravilhoso e usei como referencia. Todos os direitos reservados a Nintendo.)
-  
-  console.log(
-    '(Voz do além) Abra seus olhos...  \nAbra seus olhos... \nAcorde... \nVocê é um guerreiro que acorda após um sono de 100 anos e sem lembrar de suas memorias. Você levanta da cama e observa um objeto luminoso em cima da mesa e resolve examinar. \n(Voz do além) Essa é a tabua Sheikah, pegue-a. Ela ajudara a guia-lo após seu longo adormecimento \nVocê pega a tabua Sheikah que é um tablet misterioso com um centro brilhante. Você nunca viu algo parecido porém parece que algo é familiar. \nAo sair da caverna onde ficou adormecido, descobriu que todo reino de Hyrule estava em ruinas e foi tomado novamente pelo Ganon da calamidade. Você tambem encontra um velho ansião que se diz ser o espirito do falecido rei Rhoam e o mesmo pede para você derrotar o Ganon antes que ele tome todo o mundo. Qual seu nome guerreiro?'
-)
 
-  console.log()
-  heroi = prompt('Qual nome quer dar ao guerreiro?')
-
-  console.clear
-  console.log(
-    `Oh seu nome é ${heroi}, você precisa recuperar suas memorias e recuperar algumas insigneas de sua tabua Sheikah para poder ficar mais forte e derrotar o Ganon da calamidade`
-  )
-   // fim da historia
-
-   //dados principais
+   //Atualiazação de dados principais
 
   info.variarHora(info.tempo)
   console.log(`\nHojé é o dia ${info.dia},
@@ -221,11 +228,6 @@ function obterpoder() {
   ${info.poder} de poder Sheikah`)
   console.log()
 
-  //principal da atividade
-  console.log(
-    `${heroi} Qual ação deseja executar?: ${comecajogo}`
-  )
-  link = +prompt()
 
   while (
     link != 1 &&
@@ -235,7 +237,6 @@ function obterpoder() {
     link != 5
   ) {
     console.log('\nDigite apenas 1, 2, 3, 4 ou 5')
-    link = +prompt()
   }
   console.log()
 
@@ -278,7 +279,7 @@ console.log('Você recuperou um pouco mais de sua memoria, continue assim.')
 
 
 
-  // opção 4
+  //Escolha principal opção 4
   } else if (link == 4) {
     console.log(`${heroi}: optou por enfrentar o Ganon da Calamidade \nMusica de batalha pokemon no fundo.`)
     console.log()
@@ -296,7 +297,7 @@ console.log('Você recuperou um pouco mais de sua memoria, continue assim.')
         console.log('Você salvou Hyrule')
       }
       continuar()
-      console.clear()
+      //console.clear()
     }
 
   } else if (link == 5) {
@@ -305,7 +306,7 @@ console.log('Você recuperou um pouco mais de sua memoria, continue assim.')
     zelda = true
     console.log()
     continuar()
-    console.clear()
+    //console.clear()
   }
 
    if (retorno == 'heroi') {
@@ -323,4 +324,6 @@ console.log('Você recuperou um pouco mais de sua memoria, continue assim.')
    }
   console.log()
   console.log('FIM DO ZELDA')
-     
+}
+ }
+ //info.variarStamina()
