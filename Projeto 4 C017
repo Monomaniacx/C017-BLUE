@@ -212,7 +212,7 @@ function obterpoder() {
   )
    // fim da historia
 
-   //Atualiazação de dados principais
+   //dados principais
 
   info.variarHora(info.tempo)
   console.log(`\nHojé é o dia ${info.dia},
@@ -221,7 +221,7 @@ function obterpoder() {
   ${info.poder} de poder Sheikah`)
   console.log()
 
-  //Escolha principal da atividade a ser realizada
+  //principal da atividade
   console.log(
     `${heroi} Qual ação deseja executar?: ${comecajogo}`
   )
@@ -278,7 +278,7 @@ console.log('Você recuperou um pouco mais de sua memoria, continue assim.')
 
 
 
-  //Escolha principal opção 4
+  // opção 4
   } else if (link == 4) {
     console.log(`${heroi}: optou por enfrentar o Ganon da Calamidade \nMusica de batalha pokemon no fundo.`)
     console.log()
